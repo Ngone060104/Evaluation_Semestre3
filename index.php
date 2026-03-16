@@ -30,8 +30,8 @@ require_once('data.php');
         }
         header("Location: " . WEBROOT . "?page=list");
         exit();
-    } else {
-        echo "page introuvable";
+    }  else {
+        require_once("error.php");
     }
 
 

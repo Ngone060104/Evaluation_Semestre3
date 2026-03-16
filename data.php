@@ -20,7 +20,15 @@ if (!isset($_SESSION['categorie'])) {
         [
              "id" => 4,
             "libelle" => "Technologie"
-        ]
+        ],
+        [
+             "id" => 5,
+            "libelle" => "Sport"
+        ],
+        [
+             "id" => 6,
+            "libelle" => "Mode"
+        ],
     ];
 }
 

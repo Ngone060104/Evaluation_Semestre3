@@ -50,10 +50,16 @@
 
             <div class="p-6 space-y-6">
                 <!-- Title & Add Button -->
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <div>
-                        <h1 class="text-2xl font-bold text-slate-800">Détails d'un article</h1>
-                    </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex justify-between gap-3 items-center">
+                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                         <div>
+                             <h1 class="text-2xl font-bold text-slate-800">Détails d'un article</h1>
+                         </div>
+                     </div>
+                      <a href="<?= WEBROOT ?>?page=list" class="inline-flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-sm transition-all transform active:scale-95">
+                        <i class="fas fa-arrow-left mr-2"></i> Voire Listes
+                    </a>
+                    
                 </div>
 
 

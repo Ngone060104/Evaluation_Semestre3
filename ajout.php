@@ -38,7 +38,7 @@ require_once("data.php");
         </aside>
         <!-- div_main -->
         <!-- div_main --><!-- div_main -->
-        <div class="flex-1 bg-gray-50 overflow-y-auto px-4 pb-10"> <!-- Ajout de padding latéral pour mobile -->
+        <div class="flex-1 bg-gray-50 overflow-y-auto px-4 pb-10">
             <!-- Header discret -->
             <div class="p-4 my-4 bg-white shadow-sm border border-gray-200 rounded-xl flex items-center max-w-3xl mx-auto">
                 <div class="relative w-full">
@@ -48,6 +48,12 @@ require_once("data.php");
                     <input type="text" class="w-full bg-gray-100 text-gray-700 border-none rounded-lg py-2 pl-10 pr-4 focus:ring-2 focus:ring-blue-500 text-sm" placeholder="Rechercher une tâche...">
                 </div>
             </div>
+            <div class="flex justify-end m-5">
+                <a href="<?= WEBROOT ?>?page=list" class="inline-flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-sm transition-all transform active:scale-95">
+                    <i class="fas fa-arrow-left mr-2"></i> Voire Listes
+                </a>
+            </div>
+
 
             <!-- Formulaire d'Ajout -->
             <div class="max-w-3xl mx-auto p-5 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
@@ -56,7 +62,7 @@ require_once("data.php");
                         <i class="fas fa-plus-circle text-xl"></i>
                     </div>
                     <div>
-                        <h1 class="text-xl sm:text-2xl font-bold text-gray-800">Nouvelle Article</h1>
+                        <h1 class="text-xl sm:text-2xl font-bold text-gray-800">Nouveau Article</h1>
                         <p class="text-xs sm:text-sm text-gray-500">Remplissez les information de l'article</p>
                     </div>
                 </div>
@@ -77,22 +83,21 @@ require_once("data.php");
                         <label for="categorie" class="text-sm font-semibold text-slate-700">Catégorie</label>
                         <div class="relative">
                             <select id="categorie" name="categorie"
-                                class="w-full appearance-none bg-white px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all cursor-pointer">
+                                class="w-full text-slate-700 bg-white px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all cursor-pointer">
                                 <option value="">Sélectionnez une catégorie</option>
                                 <?php foreach ($_SESSION['categorie'] as $categorie): ?>
                                     <option value="<?= $categorie['libelle'] ?>"><?= $categorie['libelle'] ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <i class="fa-solid fa-chevron-down absolute right-4 top-4 text-slate-400 pointer-events-none"></i>
                         </div>
-                         <?php if (!empty($errorCategorie)): ?>
-                        <p class="mt-1 text-xs text-red-500 flex items-center gap-1"><i class="fas fa-exclamation-circle"></i><?= $errorCategorie ?></p>
-                         <?php endif; ?>
+                        <?php if (!empty($errorCategorie)): ?>
+                            <p class="mt-1 text-xs text-red-500 flex items-center gap-1"><i class="fas fa-exclamation-circle"></i><?= $errorCategorie ?></p>
+                        <?php endif; ?>
                     </div>
                     <!-- Contenu -->
                     <div>
-                        <label for="description" class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
-                        <textarea id="description" name="contenu" rows="4"
+                        <label for="description" class="block text-sm font-semibold text-gray-700 mb-1">Contenu</label>
+                        <textarea id="description" name="contenu"
                             class="w-full border border-gray-200 rounded-xl py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-sm sm:text-base"
                             placeholder="Décrivez les étapes clés..."></textarea>
                         <?php if (!empty($errorContenu)): ?>
@@ -108,7 +113,7 @@ require_once("data.php");
                         </a>
                         <button type="submit" name="ajouter"
                             class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-8 rounded-xl shadow-lg shadow-blue-200 transition-all transform active:scale-95">
-                            Créer la tâche
+                            Ajouter
                         </button>
                     </div>
                 </form>
