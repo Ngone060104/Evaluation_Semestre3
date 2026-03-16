@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -76,7 +75,7 @@
                                 <?php foreach ($articles as $article): ?>
                                     <tr class="hover:bg-slate-50/50 transition">
                                         <td class="px-6 py-4 font-medium text-slate-800"><?= $article['titre'] ?></td>
-                                        <td class="px-6 py-4 text-slate-500 text-sm"><?= getCategorieLibelle($article['categorie']) ?></td>
+                                        <td class="px-6 py-4 text-slate-500 text-sm"><?=getCategorieLibelle($article['categorie']) ?></td>
                                         <td class="px-6 py-4 text-right">
                                             <div class="flex justify-end gap-2">
                                                 <a href="<?= WEBROOT ?>?page=details&id=<?=$article['id']  ?? 0?>" class="p-2 text-blue-500 hover:bg-blue-50 rounded-lg transition" title="Voir"><i class="fas fa-eye"></i></a>

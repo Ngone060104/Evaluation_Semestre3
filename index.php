@@ -16,8 +16,10 @@ require_once('data.php');
     $page = $_REQUEST['page'] ?? 'list';
     if ($page == 'list') {
             $articles = getAllArticles();
+            $categories = getAllCategories();
         require_once('list.php');
     } elseif ($page == 'ajout') {
+          $categories = getAllCategories();
         require_once('ajout.php');
     } elseif ($page == 'details') {
         require_once('details.php');

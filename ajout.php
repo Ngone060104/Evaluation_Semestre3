@@ -85,8 +85,8 @@ require_once("data.php");
                             <select id="categorie" name="categorie"
                                 class="w-full text-slate-700 bg-white px-4 py-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all cursor-pointer">
                                 <option value="">Sélectionnez une catégorie</option>
-                                <?php foreach ($_SESSION['categorie'] as $categorie): ?>
-                                    <option value="<?= $categorie['libelle'] ?>"><?= $categorie['libelle'] ?></option>
+                                <?php foreach ($categories as $categorie): ?>
+                                    <option value="<?= $categorie['id'] ?>"><?= $categorie['libelle'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
